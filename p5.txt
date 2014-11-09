@@ -19,7 +19,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 3. Antes de analizar las tramas, mira las estadísticas generales que aparecen en el menú de Statistics. En el apartado de jerarquía de protocolos (Protocol Hierarchy) se puede ver el porcentaje del tráfico correspondiente al protocolo TCP y UDP.
  ** ¿Cuál de los dos es mayor? UDP ¿Es esto consistente con una aplicación que transmite en tiempo real? Si, la mayor parte de trafico es RTP y esta contenida en UDP.
- ** ¿Qué otros protocolos podemos ver en la jerarquía de protocolos? DNS,HTTP,Classic-S, SIP, H-261, RTP, SIP/SDP, ARP, ICMP, RTCP. 
+ ** ¿Qué otros protocolos podemos ver en la jerarquía de protocolos? DNS,HTTP,Classic-STUN, SIP, H-261, RTP, SIP/SDP, ARP, ICMP, RTCP. 
 
 
 4. Observa por encima el flujo de tramas en el menú de Statistics en IO Graphs. La captura que estamos viendo incluye desde la inicialización (registro) de la aplicación hasta su finalización, con una llamada entremedias.
@@ -45,15 +45,15 @@ El cliente pregunta los dominios que tiene esa ip.
 
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del protocolo STUN.
- ** ¿Por qué crees que se hace uso de este protocolo en esta captura? Busca en la Wikipedia.
- ** ¿Estamos tras un NAT?
+ ** ¿Por qué crees que se hace uso de este protocolo en esta captura? Busca en la Wikipedia.Porque es un cliente Nat y nos permite encontar nustra direccion ip publica.
+ ** ¿Estamos tras un NAT? SI
 
 
 8. La trama 46 es la primera trama SIP. En un entorno como el de Internet, lo habitual es desconocer la dirección IP de la otra parte al realizar una llamada. Por eso, todo usuario registra su localización en un servidor Registrar. El Registrar guarda información sobre los usuarios en un servidor de localización que puede ser utilizado para localizar usuarios.
- ** ¿Qué dirección IP tiene el servidor Registrar?
- ** ¿A qué puerto (del servidor Registrar) se envían los paquetes SIP?
- ** ¿Qué método SIP utiliza el UA para registrarse?
- ** Además de REGISTER, ¿qué instrucciones SIP entiende el UA?
+ ** ¿Qué dirección IP tiene el servidor Registrar? 86.64.162.35
+ ** ¿A qué puerto (del servidor Registrar) se envían los paquetes SIP?5060
+ ** ¿Qué método SIP utiliza el UA para registrarse? REGISTER
+ ** Además de REGISTER, ¿qué instrucciones SIP entiende el UA?INVITE,ACK,OPTIONS,BYE,CANCEL,NOTIFY,REFER,MESSAGE
 
 
 

@@ -41,7 +41,7 @@ El cliente pregunta los dominios que tiene esa ip.
  ** ¿Podrías decir la URL que se está pidiendo?http:ekiga.net/ip/
  ** ¿Qué user agent (UA) la está pidiendo? Ekiga
  ** ¿Qué devuelve el servidor?La direccion publica con la que nos ve 83.36.48.212
- ** Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y vamos a la misma URL, ¿qué recibimos? 79.153.162.116¿Qué es, entonces, lo que está respondiendo el servidor? Nos responde con nuestra ip publica.
+ ** Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y vamos a la misma URL, ¿qué recibimos? IP:79.153.162.116 ¿Qué es, entonces, lo que está respondiendo el servidor? Nos responde con nuestra ip publica.
 
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del protocolo STUN.

@@ -60,25 +60,27 @@ El cliente pregunta los dominios que tiene esa ip.
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 9. Fijémonos en las tramas siguientes a la número 46:
- ** ¿Se registra con éxito en el primer intento?
- ** ¿Cómo sabemos si el registro se ha realizado correctamente o no?
- ** ¿Podrías identificar las diferencias entre el primer intento y el segundo de registro? (fíjate en el tamaño de los paquetes y mira a qué se debe el cambio)
- ** ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica las unidades.
+ ** ¿Se registra con éxito en el primer intento? NO
+ ** ¿Cómo sabemos si el registro se ha realizado correctamente o no? Porque el servidor responde con 401 Unauthorized en el caso de no registrar.
+ ** ¿Podrías identificar las diferencias entre el primer intento y el segundo de registro? (fíjate en el tamaño de los paquetes y mira a qué se debe el cambio)El primer intento devuelve 401Unauthorized y el segundo 200 OK.
+En el primer paquete no envio autenticacion y el servidor me responde con un 401 Unauthorized y el valor nonce con el que se tiene que autenticar.
+En el segundo paquete se envia el register con nonce y algoritmo md5, el servidor responde con 200 Ok y me registra.
+ ** ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica las unidades. 3600 segundos
 
 
 10. Una vez registrados, podemos efectuar una llamada. Vamos a probar con el servicio de eco de Ekiga que nos permite comprobar si nos hemos conectado correctamente. El servicio de eco tiene la dirección sip:500@ekiga.net. Veamos el INVITE de cerca.
- ** ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP?
- ** ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
- ** ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
- ** ¿En qué se diferencia el segundo INVITE más abajo del primero? ¿A qué crees que se debe esto?
+ ** ¿Puede verse el nombre del que efectúa la llamada, así como su dirección SIP? Si,como nombre Gregorio Robles con dir sip:grex@ekiga.net
+ ** ¿Qué es lo que contiene el cuerpo de la trama?Contiene la descripción de la sesión ¿En qué formato/protocolo está?En protocolo SDP.
+ ** ¿Tiene éxito el primer intento?No ¿Cómo lo sabes?El servidor pide autenticacion del proxy.
+ ** ¿En qué se diferencia el segundo INVITE más abajo del primero? ¿A qué crees que se debe esto?El segundo INVITE tiene una autenticacion de proxy con nonce y se debe a la respuesta del servidor del primer INVITE en el que pide una autenticacion de proxy.
 
 
 11. Una vez conectado, estudia el intercambio de tramas.
- ** ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
- ** ¿Cuál es el tamaño de paquete de los mismos?
- ** ¿Se utilizan bits de padding?
- ** ¿Cuál es la periodicidad de los paquetes que se envían?
- ** ¿Cuántos bits/segundo estamos enviando?
+ ** ¿Qué protocolo(s) se utiliza(n)? H.261 y RTP ¿Para qué sirven estos protocolos? H.261 indica el codec del stream de video y RTP para intercambiar los paquetes en sesion a tiempo real.
+ ** ¿Cuál es el tamaño de paquete de los mismos?De H.261 es un tamaño variable(depende de la imagen que lleve) y los paquetes RTP tienen 214 bytes
+ ** ¿Se utilizan bits de padding? No, Padding:False en los paquetes.
+ ** ¿Cuál es la periodicidad de los paquetes que se envían?160 milisegundos
+ ** ¿Cuántos bits/segundo estamos enviando?10700bits/s
 
 
 

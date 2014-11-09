@@ -35,13 +35,13 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
  ** ¿Cuál es la dirección IP del servidor de nombres del ordenador que ha lanzado Ekiga?80.58.61.250
  ** ¿Qué dirección IP (de ekiga.net) devuelve el servicio de nombres?86.64.162.35
  ** ¿Por qué se pide también para 35.162.64.86.in-addr.arpa?
-Confirmar el dominio en el que se encuentra esa ip.
+El cliente pregunta los dominios que tiene esa ip.
 
 6. A continuación, hay más de una docena de tramas TCP/HTTP.
- ** ¿Podrías decir la URL que se está pidiendo?
- ** ¿Qué user agent (UA) la está pidiendo?
- ** ¿Qué devuelve el servidor?
- ** Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y vamos a la misma URL, ¿qué recibimos? ¿Qué es, entonces, lo que está respondiendo el servidor?
+ ** ¿Podrías decir la URL que se está pidiendo?http:ekiga.net/ip/
+ ** ¿Qué user agent (UA) la está pidiendo? Ekiga
+ ** ¿Qué devuelve el servidor?La direccion publica con la que nos ve 83.36.48.212
+ ** Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y vamos a la misma URL, ¿qué recibimos? 79.153.162.116¿Qué es, entonces, lo que está respondiendo el servidor? Nos responde con nuestra ip publica.
 
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del protocolo STUN.

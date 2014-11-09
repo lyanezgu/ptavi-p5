@@ -23,8 +23,8 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 
 4. Observa por encima el flujo de tramas en el menú de Statistics en IO Graphs. La captura que estamos viendo incluye desde la inicialización (registro) de la aplicación hasta su finalización, con una llamada entremedias.
- ** Filtra por sip para conocer cuándo se envían paquetes SIP. ¿En qué segundos tienen lugar esos envíos?
- ** Y los paquetes con RTP, ¿cuándo se envían?
+ ** Filtra por sip para conocer cuándo se envían paquetes SIP. ¿En qué segundos tienen lugar esos envíos? 7,35s; 7,425s; 7,515s; 7,565s; 7,645s; 14,425s; 14,595s; 14,615s; 16,235s; de 16,32 a 16,35s; 16,465s; 38,115s; 38,365s; 38,935s; 39,155s; 39,175s; 39,205s; 39,225s; 55,695s; 55,775s; 55,855s;
+ ** Y los paquetes con RTP, ¿cuándo se envían? van del intervalo 17,5s al 19,90s; 20,45s; 20,77s;  21,83s; 21,92s; 21,97s; 23,27s; 23,31s; 23,51s; 23,76s; 23,87s; 23,98s; 24,08s; 24,37s; 24,65s; 24,77s; 24,83s; 24,87s; 24,92s;25,04s; 25,10s; 25,16s; 25,19s; 25,27s; 25,43s; 25,77s; 25,83s; 25,94s; 26,07s; 26,09s; 26,30s; 26,43s; 26,67s; 26,80s; 26,84s; 27,03s; 27,16s; 27,44s; 27,76s; 27,90s; 28,10s; 28,19s; 28,43s; 28,67s; 29,04s; 29,07; 29,12s; del 29,28s al 29,50s; 29,76s; 29,85s; 29,87s; 30,35s; 30,77s; 31,84s; 32,25s; 32,64s; 33,33s; 33,55s; 33,70s; 34,27s; 34,66s; 35,15s; 35,42s; 35,85s; 36,35s; 36,78s; 36,98s; 37,75s; 38,15s; 
 
 
 

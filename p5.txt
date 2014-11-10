@@ -140,7 +140,7 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
  ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter? MaxDelta:49,345000 ms. Max Jitter: 2,010878 ms y Mean Jitter:0,628912 ms.
  ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Si, en Telephony>VoIP Call> player Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
  ** ¿Sabrías decir qué tipo de servicio ofrece sip:9999@qxip.net?
-Radio Italiana de Musica.
+El tipo de servicio es de una grabacion de programa italiano de Musica.
 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]

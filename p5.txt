@@ -79,8 +79,8 @@ En el segundo paquete se envia el register con nonce y algoritmo md5, el servido
  ** ¿Qué protocolo(s) se utiliza(n)? H.261 y RTP ¿Para qué sirven estos protocolos? H.261 indica el codec del stream de video y RTP para intercambiar los paquetes en sesion a tiempo real.
  ** ¿Cuál es el tamaño de paquete de los mismos?De H.261 es un tamaño variable(depende de la imagen que lleve) y los paquetes RTP tienen 214 bytes
  ** ¿Se utilizan bits de padding? No, Padding:False en los paquetes.
- ** ¿Cuál es la periodicidad de los paquetes que se envían?160 milisegundos
- ** ¿Cuántos bits/segundo estamos enviando?10700bits/s
+ ** ¿Cuál es la periodicidad de los paquetes que se envían?20 milisegundos
+ ** ¿Cuántos bits/segundo estamos enviando?64kbits/s
 
 
 
@@ -97,7 +97,7 @@ En el segundo paquete se envia el register con nonce y algoritmo md5, el servido
  ** ¿Cuánto valen el delta y el jitter para el primer paquete que ha llegado? Delta y Jitter 0
  ** ¿Podemos saber si éste es el primer paquete que nos han enviado?No porque su numero de secuencia es erronea.
  ** Los valores de jitter son menores de 10ms hasta un paquete dado. ¿Cuál?Hasta el paquete 247
- ** ¿A qué se debe el cambio tan brusco del jitter?Al descenso del ancho de banda y a que el paquete ha legado con retardo muy alto.
+ ** ¿A qué se debe el cambio tan brusco del jitter?Al descenso del ancho de banda y a que el paquete ha llegado con retardo muy alto.
  ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué?Si es comparable con el delta ya que indica la diferencia en entre el tiempo de respuesta y envio.
  ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter? 1/16
 
@@ -130,17 +130,17 @@ Captura de una sesión SIP
 Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.net. Tendrás que dar de alta una cuenta en www.ekiga.net con el navegador. Recuerda también que has de comenzar a capturar tramas antes de arrancar Ekiga para ver todo el proceso en el que participa SIP. Para realizar los siguientes ejercicios, deberás crearte una cuenta en ekiga.net y darte de alta la lanzar la aplicación.
 
 17. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
- ** ¿Es necesario el uso de DNS y STUN? ¿Por qué?
- ** ¿Son diferentes el registro y la descripción de la sesión?
+ ** ¿Es necesario el uso de DNS y STUN? ¿Por qué? Si, porque en este caso usamos el cliente usa una ip privada que por nat necesita dns y stun. 
+ ** ¿Son diferentes el registro y la descripción de la sesión? Si en este caso utilizamos PUBLISH para registrarnos en el servidor, y las condiciones de conexión son distintas.
 
 
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
- ** ¿Cuántos flujos tenemos?
- ** ¿Cuál es su periodicidad?
- ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
- ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
+ ** ¿Cuántos flujos tenemos? 2
+ ** ¿Cuál es su periodicidad? 160 ms
+ ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter? MaxDelta:29,968 ms. Max Jitter: 1,942412 ms y Mean Jitter:0,627531 ms.
+ ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Si, en Telephony>VoIP Call> player Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
  ** ¿Sabrías decir qué tipo de servicio ofrece sip:9999@qxip.net?
-
+Radio Italiana de Musica.
 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
